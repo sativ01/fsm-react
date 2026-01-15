@@ -2,10 +2,14 @@
   "name": "fsm-react",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "demo-fe"
+  ],
   "scripts": {
-    "dev": "slidev",
+    "slides": "slidev",
     "build": "slidev build",
-    "export": "slidev export"
+    "export": "slidev export",
+    "dev:demo": "npm run dev --workspace=demo-fe"
   },
   "dependencies": {
     "@iconify-json/logos": "^1.2.10",
