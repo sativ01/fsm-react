@@ -1,30 +1,44 @@
 ---
 theme: light-icons
-layout: intro
-image: 'https://images.pexels.com/photos/1250260/pexels-photo-1250260.jpeg'
+layout: dynamic-image
+equal: true
+left: false
+image: 'https://images.pexels.com/photos/2956141/pexels-photo-2956141.jpeg'
 ---
 
-<div class="mb-4 absolute bottom-4 left-12">
-  <span class="text-6xl text-primary-lighter text-opacity-80" style="font-weight:500;">
-    Finite-State Machines ❤️ React
-  </span>
-  <div class="text-4xl text-white text-opacity-60 mt-8" style="font-weight:400;">
-    Your Name
+<style>
+.slidev-slide-content  {
+  background-color: #f5f3e9 !important;
+}
+</style>
+<div class="mb-4 bottom-4 left-12">
+  <div class="text-6xl text-primary-lighter text-opacity-80 text-center upper" style="font-weight:500;">
+    Finite-State Machines
   </div>
-  <div class="text-2xl text-white text-opacity-40 mt-2">
-    Your Title
+  <div class="text-6xl m-4 text-primary-lighter text-opacity-80 text-center" style="font-weight:500;">
+        <twemoji-red-heart class="text-6xl text-red-400 mx-2 animate-pulse"/>
   </div>
-  <div class="text-xl text-white text-opacity-40 mt-4">
-    December 24, 2025
+  <div class="text-6xl text-primary-lighter text-opacity-80 text-center" style="font-weight:500;">
+        <div class="inline-flex">
+          <uim-react class="text-6xl text-cyan-300" /><span>React</span>
+        </div>
   </div>
+  <div class="text-4xl text-primary uppercase text-opacity-60 mt-8 text-right" style="font-weight:400;">
+    Ivan Satsiuk 
+  </div>
+  <pre class="text-xl text-primary text-opacity-40 mt-4 text-right">
+    Jan 16, 2026
+  </pre>
 </div>
+  <div class="absolute right-4 bottom-4 text-sm text-black text-opacity-80 mt-6 text-right uppercase">
+     Photo by Markus Spiske
+  </div>
 
 ---
 layout: two-cols
 ---
 
 Game State Control
-
 ### Two Buttons:
 - **Stop button**: Available when playing or paused → goes to Stopped
 - **Start/Pause/Resume button**: Changes label based on state
@@ -33,8 +47,11 @@ Game State Control
   - Paused → shows "Resume"
   - Stopped → disabled
 
-::right::
+<div class="w-full m-4 flex items-center justify-center">
+    <img class="h-25" src="/images/buttons.png" />
+</div>
 
+::right::
 
 ```mermaid
 stateDiagram-v2
@@ -52,7 +69,7 @@ stateDiagram-v2
 ---
 routeAlias: soup
 layout: dynamic-image
-equal: false
+equal: true
 left: false
 image: 'images/boolean_soup.jpg'
 ---
@@ -61,9 +78,9 @@ The "Boolean Soup" Problem
 ````md magic-move
 ```tsx
 function GameControl() {
-  const [isIdle, setIsIdle] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isIdle, setIsIdle] = useState(true)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [isPaused, setIsPaused] = useState(false)
 
   const handleStart = () => {
     setIsIdle(false);
@@ -77,10 +94,10 @@ function GameControl() {
 ```
 ```tsx {5|15-23}
 function GameControl() {
-  const [isIdle, setIsIdle] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-  const [isStopped, setIsStopped] = useState(false);
+  const [isIdle, setIsIdle] = useState(true)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [isPaused, setIsPaused] = useState(false)
+  const [isStopped, setIsStopped] = useState(false)
 
   const handleStart = () => {
     setIsIdle(false);
