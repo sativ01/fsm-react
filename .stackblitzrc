@@ -1,4 +1,4 @@
 {
-  "startCommand": "npm run dev:demo",
+  "startCommand": "npm run demo",
   "installCommand": "npm install"
 }
